@@ -1,0 +1,14 @@
+{
+  "project": [
+    {
+      "title": "Star Wars",
+      "info": "Galaxy Documentary",
+      "category": "Sci Fi Website",
+      "summary": "hello",
+      "detail": "Galaxy Documentary",
+      "billingType": "Daily",
+      "status": "Okay to Start",
+      "id": 1
+    }
+  ]
+}
