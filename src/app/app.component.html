@@ -1,3 +1,12 @@
-<div class="overflow-hidden">
-    <router-outlet></router-outlet>
+<div class="flex h-full flex-1">
+    <!-- primaryNav -->
+    <!-- <input type="checkbox" id="primaryNav" > -->
+    <div class="sidebar overflow-hidden">
+        <app-sidebar></app-sidebar>
+    </div>
+    <!-- </div> -->
+    <section class="outlet flex-1">
+        <router-outlet>
+        </router-outlet>
+    </section>
 </div>
