@@ -7,6 +7,8 @@ import { ProjectFormContainerComponent } from './project-form-container/project-
 import { ProjectsListContainerComponent } from './projects-list-container/projects-list-container.component';
 import { ProjectFormPresentationComponent } from './project-form-container/project-form-presentation/project-form-presentation.component';
 import { ProjectListPresentationComponent } from './projects-list-container/project-list-presentation/project-list-presentation.component';
+import { ProjectInfoContainerComponent } from './project-info-container/project-info-container.component';
+import { ProjectInfoPresentationComponent } from './project-info-container/project-info-presentation/project-info-presentation.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ProjectListPresentationComponent } from './projects-list-container/proj
     ProjectFormContainerComponent,
     ProjectsListContainerComponent,
     ProjectFormPresentationComponent,
-    ProjectListPresentationComponent
+    ProjectListPresentationComponent,
+    ProjectInfoContainerComponent,
+    ProjectInfoPresentationComponent
   ],
   imports: [
     CommonModule,

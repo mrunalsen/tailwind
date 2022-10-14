@@ -27,7 +27,7 @@
                             <tr class="border-b" *ngFor="let items of projectData, let i = index">
                                 <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{i + 1}}</td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
-                                    <p>{{items.title}}</p>
+                                    <a routerLink="../info">{{items.title}}</a>
                                 </td>
                                 <td class="text-sm text-gray-900 font-light px-6 py-4 whitespace-nowrap">
                                     <p>{{items.category}}</p>

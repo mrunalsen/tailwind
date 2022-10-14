@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ProjectFormContainerComponent } from './project-form-container/project-form-container.component';
+import { ProjectInfoContainerComponent } from './project-info-container/project-info-container.component';
 import { ProjectsListContainerComponent } from './projects-list-container/projects-list-container.component';
 import { ProjectsComponent } from './projects.component';
 
@@ -13,6 +14,9 @@ const routes: Routes = [
       },
       {
         path: 'list', component: ProjectsListContainerComponent
+      },
+      {
+        path: 'info', component: ProjectInfoContainerComponent
       },
       {
         path: ``,
