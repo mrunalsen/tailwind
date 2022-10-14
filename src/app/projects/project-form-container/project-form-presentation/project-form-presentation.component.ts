@@ -15,9 +15,9 @@ export class ProjectFormPresentationComponent implements OnInit {
 
   @Input() public set projectData(value: Projects[] | null) {
     if (value) {
+      this.formTitle = 'Edit Project'
+      this.projectForm.patchValue(value);
       this._projectData = value
-      // this.formTitle = 'Edit Title',
-      // this.projectForm.patchValue(value);
     }
   }
   public get projectTitleData(): Projects[] | null {
@@ -25,8 +25,9 @@ export class ProjectFormPresentationComponent implements OnInit {
   }
 
   @Output() add: EventEmitter<Projects>;
+  @Output() edit: EventEmitter<Projects>;
   public projectForm: FormGroup;
-  // public formTitle: string
+  public formTitle: string
   private _projectData!: Projects[]
 
   constructor(
@@ -34,8 +35,9 @@ export class ProjectFormPresentationComponent implements OnInit {
     private route: Router,
   ) {
     this.projectForm = this.projectFormPresenter.buildform()
+    this.formTitle = 'Create Project'
     this.add = new EventEmitter()
-
+    this.edit = new EventEmitter()
     this.billing = [
       'Fixed Price',
       'Daily',
@@ -70,7 +72,8 @@ export class ProjectFormPresentationComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectFormPresenter.projectFormData$.subscribe((res) => {
-      this.add.emit(res)
+      // this.add.emit(res)
+      this.formTitle === 'Create Project' ? this.add.emit(res) : this.edit.emit(res)
     })
   }
   onSubmit() {

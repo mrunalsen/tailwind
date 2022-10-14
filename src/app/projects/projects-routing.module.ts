@@ -18,7 +18,11 @@ const routes: Routes = [
         path: ``,
         pathMatch: `full`,
         redirectTo: `form`
-      }
+      },
+      {
+        path: 'edit/:id',
+        component: ProjectFormContainerComponent
+      },
     ]
   }
 ];

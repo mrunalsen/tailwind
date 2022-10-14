@@ -1,1 +1,2 @@
-<app-project-list-presentation [projectData]="project$ | async"></app-project-list-presentation>
+<app-project-list-presentation [projectData]="project$ | async" (delete)="deleteData($event)">
+</app-project-list-presentation>

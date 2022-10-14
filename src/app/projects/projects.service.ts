@@ -22,4 +22,13 @@ export class ProjectsService {
   public addProjectData(form: Projects): Observable<Projects[]> {
     return this.http.post<Projects[]>(`${this.apiLink}/project`, form)
   }
+  public getProjectById(id: number): Observable<Projects[]> {
+    return this.http.get<Projects[]>(`${this.apiLink}/project/${id}`);
+  }
+  public editProjectData(form: Projects, id: number): Observable<Projects[]> {
+    return this.http.put<Projects[]>(`${this.apiLink}/project/${id}`, form)
+  }
+  public deleteProjectData(id: number): Observable<Projects[]> {
+    return this.http.delete<Projects[]>(`${this.apiLink}/project/${id}`)
+  }
 }

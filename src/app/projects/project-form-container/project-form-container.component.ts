@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Projects } from '../project.model';
 import { ProjectsService } from '../projects.service';
@@ -11,23 +11,35 @@ import { ProjectsService } from '../projects.service';
 export class ProjectFormContainerComponent implements OnInit {
 
   public project$: Observable<Projects[]>
-
+  public id: number
   constructor(
     private route: Router,
-    private projectService: ProjectsService
+    private projectService: ProjectsService,
+    private activatedroute: ActivatedRoute
   ) {
     this.project$ = new Observable()
+    this.id = parseInt(this.activatedroute.snapshot.params['id'])
+    if (this.id) {
+      console.log(this.id);
+      this.project$ = this.projectService.getProjectById(this.id)
+    }
   }
 
   ngOnInit(): void {
-    this.getData()
+    // this.getData()
   }
-  public getData() {
-    this.project$ = this.projectService.getProjectData()
-  }
+  // public getData() {
+  //   this.project$ = this.projectService.getProjectData()
+  // }
   public addData(form: Projects) {
     this.projectService.addProjectData(form).subscribe((res) => {
       this.route.navigateByUrl('/projects/list')
+    })
+  }
+  public onEdit(form: Projects) {
+    this.projectService.editProjectData(form, this.id).subscribe((res: any) => {
+      alert('Edit Success')
+      this.route.navigateByUrl('projects/list')
     })
   }
 }

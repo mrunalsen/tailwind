@@ -1,1 +1,2 @@
-<app-project-form-presentation [projectData]="project$ | async" (add)="addData($event)"></app-project-form-presentation>
+<app-project-form-presentation [projectData]="project$ | async" (add)="addData($event)" (edit)="onEdit($event)">
+</app-project-form-presentation>

@@ -20,4 +20,9 @@ export class ProjectsListContainerComponent implements OnInit {
   public getData() {
     this.project$ = this.projectService.getProjectData()
   }
+  public deleteData(id: number) {
+    this.projectService.deleteProjectData(id).subscribe(() => {
+      this.getData();
+    })
+  }
 }
