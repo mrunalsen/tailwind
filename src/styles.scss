@@ -8,9 +8,12 @@
 
 // Now other style import
 @import '~/src/assets/scss/layout/index';
-
 @import '~/src/assets/scss/utilities/index';
 
 // Vendor base and component style import
+// Tailwind
 @import '~/src/assets/scss/vendor/tailwind-base';
 @import '~/src/assets/scss/vendor/tailwind-components';
+
+// Icons style import
+@import '~/src/assets/icons/style';

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { UpdateListService } from 'src/app/shared/update-list.service';
 import { Projects } from '../project.model';
 import { ProjectsService } from '../projects.service';
 
@@ -15,7 +16,8 @@ export class ProjectFormContainerComponent implements OnInit {
   constructor(
     private route: Router,
     private projectService: ProjectsService,
-    private activatedroute: ActivatedRoute
+    private activatedroute: ActivatedRoute,
+    private updateList: UpdateListService
   ) {
     this.project$ = new Observable()
     this.id = parseInt(this.activatedroute.snapshot.params['id'])
@@ -34,6 +36,7 @@ export class ProjectFormContainerComponent implements OnInit {
   public addData(form: Projects) {
     this.projectService.addProjectData(form).subscribe((res) => {
       this.route.navigateByUrl('/projects/list')
+      this.updateList.nextMethod(true);
     })
   }
   public onEdit(form: Projects) {

@@ -80,7 +80,6 @@ export class ProjectFormPresentationComponent implements OnInit {
     this.projectFormPresenter.onSubmit(this.projectForm)
     console.log(this.projectForm.value);
   }
-
   onCancel() {
     this.route.navigateByUrl('/projects/list')
   }

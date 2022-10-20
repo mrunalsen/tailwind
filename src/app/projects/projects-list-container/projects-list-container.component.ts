@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { UpdateListService } from 'src/app/shared/update-list.service';
 import { Projects } from '../project.model';
 import { ProjectsService } from '../projects.service';
 
@@ -10,7 +11,7 @@ import { ProjectsService } from '../projects.service';
 export class ProjectsListContainerComponent implements OnInit {
   public project$: Observable<Projects[]>
 
-  constructor(private projectService: ProjectsService) {
+  constructor(private projectService: ProjectsService, private updatelist: UpdateListService) {
     this.project$ = new Observable()
   }
 
@@ -23,6 +24,7 @@ export class ProjectsListContainerComponent implements OnInit {
   public deleteData(id: number) {
     this.projectService.deleteProjectData(id).subscribe(() => {
       this.getData();
+      this.updatelist.nextMethod(true)
     })
   }
 }

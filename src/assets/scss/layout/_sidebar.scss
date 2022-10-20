@@ -1,10 +1,5 @@
 .sidebar {
     flex: 0 0 250px;
-    // background: $sidebar-bg;
-
-    .sidebar-header {
-        height: 68px;
-    }
 }
 
 #project-toggle {
@@ -23,19 +18,19 @@
             transition: all 1s ease-in-out;
         }
 
-        &~.test .toggle-label {
-            animation: rotation 0.4s 1 linear;
+        // &~.test .toggle-label {
+        //     animation: rotation 0.4s 1 linear;
 
-            @keyframes rotation {
-                from {
-                    transform: rotate(0deg);
-                }
+        //     @keyframes rotation {
+        //         from {
+        //             transform: rotate(0deg);
+        //         }
 
-                to {
-                    transform: rotate(180deg);
-                }
-            }
-        }
+        //         to {
+        //             transform: rotate(180deg);
+        //         }
+        //     }
+        // }
     }
 }
 
